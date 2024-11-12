@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cusaddxxc2hus"]
+
+[ext_resource type="Script" path="res://nain.gd" id="1_2qxmj"]
+
+[node name="IIROSE" type="Node"]
+script = ExtResource("1_2qxmj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[connection signal="connected_to_server" from="." to="." method="connected"]
+[connection signal="connection_closed" from="." to="." method="closed"]
+[connection signal="message_received" from="." to="." method="get_mes"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
